@@ -59,14 +59,22 @@ class LoginScreen extends StatelessWidget {
                             alignment: AlignmentDirectional.centerStart,
                             child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
-                                child: Text('Forgot password ?', style: TextStyles.font12WhiteRegular)),
+                                child: InkWell(
+                                    onTap: () =>
+                                        context.pushNamed(Routes.forgetPasswordEmailRecoveryScreen),
+                                    child: Text('Forgot password ?',
+                                        style: TextStyles.font12WhiteRegular))),
                           ),
                           42.isHeight,
                           ButtonWidget(
-                            onTap: () {},
+                            onTap: () => context.pushNamedAndRemoveUntil(
+                              Routes.layoutScreen,
+                              predicate: (route) => false,
+                            ),
                             text: 'Login',
                             height: 57.h,
                             minWidth: 289.w,
+                            topRightRadius: 0,
                           ),
                           10.isHeight,
                           TextButton(

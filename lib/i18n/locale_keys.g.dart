@@ -2,5 +2,6 @@
 
 abstract class  LocaleKeys {
   static const LOGIN = 'LOGIN';
+  static const SUBSCRIPE = 'SUBSCRIPE';
 
 }

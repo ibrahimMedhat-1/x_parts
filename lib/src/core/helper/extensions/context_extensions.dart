@@ -1,5 +1,3 @@
-
-
 import 'package:x_parts/src/core/utils/app_imports.dart';
 
 extension Navigation on BuildContext {

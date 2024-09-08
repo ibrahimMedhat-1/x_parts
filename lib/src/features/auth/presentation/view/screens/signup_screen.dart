@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:x_parts/src/core/utils/app_imports.dart';
 import 'package:x_parts/src/core/widgets/shared/app_bar_default.dart';
 
@@ -26,7 +25,7 @@ class SignupScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Row(),
+                          const Row(),
                           TextFormFieldCustomized(
                             height: 78.h,
                             width: 289.w,
@@ -85,6 +84,7 @@ class SignupScreen extends StatelessWidget {
                           ButtonWidget(
                             onTap: () {},
                             text: 'Create',
+                            topRightRadius: 0,
                             height: 57.h,
                             minWidth: 289.w,
                           ),

@@ -45,31 +45,206 @@ class $AssetsI18nGen {
   List<String> get values => [ar, en];
 }
 
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/id_image.png
+  AssetGenImage get idImage =>
+      const AssetGenImage('assets/images/id_image.png');
+
+  /// File path: assets/images/payment_method_cash.png
+  AssetGenImage get paymentMethodCash =>
+      const AssetGenImage('assets/images/payment_method_cash.png');
+
+  /// File path: assets/images/payment_method_visa.png
+  AssetGenImage get paymentMethodVisa =>
+      const AssetGenImage('assets/images/payment_method_visa.png');
+
+  /// File path: assets/images/upload_id_back.svg
+  SvgGenImage get uploadIdBack =>
+      const SvgGenImage('assets/images/upload_id_back.svg');
+
+  /// File path: assets/images/upload_id_front.svg
+  SvgGenImage get uploadIdFront =>
+      const SvgGenImage('assets/images/upload_id_front.svg');
+
+  /// List of all assets
+  List<dynamic> get values => [
+        idImage,
+        paymentMethodCash,
+        paymentMethodVisa,
+        uploadIdBack,
+        uploadIdFront
+      ];
+}
+
 class $AssetsSvgsGen {
   const $AssetsSvgsGen();
 
   /// Directory path: assets/svgs/bottom_nav_bar_icons
   $AssetsSvgsBottomNavBarIconsGen get bottomNavBarIcons =>
       const $AssetsSvgsBottomNavBarIconsGen();
+
+  /// Directory path: assets/svgs/homepage
+  $AssetsSvgsHomepageGen get homepage => const $AssetsSvgsHomepageGen();
+
+  /// Directory path: assets/svgs/product_details
+  $AssetsSvgsProductDetailsGen get productDetails =>
+      const $AssetsSvgsProductDetailsGen();
+}
+
+class $AssetsTestGen {
+  const $AssetsTestGen();
+
+  /// File path: assets/test/accessories.png
+  AssetGenImage get accessories =>
+      const AssetGenImage('assets/test/accessories.png');
+
+  /// File path: assets/test/backlight_gif.gif
+  AssetGenImage get backlightGif =>
+      const AssetGenImage('assets/test/backlight_gif.gif');
+
+  /// File path: assets/test/bmw_image.png
+  AssetGenImage get bmwImage =>
+      const AssetGenImage('assets/test/bmw_image.png');
+
+  /// File path: assets/test/car_image.svg
+  SvgGenImage get carImage => const SvgGenImage('assets/test/car_image.svg');
+
+  /// File path: assets/test/flash_image.svg
+  SvgGenImage get flashImage =>
+      const SvgGenImage('assets/test/flash_image.svg');
+
+  /// File path: assets/test/mercedes_image.png
+  AssetGenImage get mercedesImage =>
+      const AssetGenImage('assets/test/mercedes_image.png');
+
+  /// File path: assets/test/performance.png
+  AssetGenImage get performance =>
+      const AssetGenImage('assets/test/performance.png');
+
+  /// File path: assets/test/sale_image.svg
+  SvgGenImage get saleImage => const SvgGenImage('assets/test/sale_image.svg');
+
+  /// File path: assets/test/spare_part_image.png
+  AssetGenImage get sparePartImage =>
+      const AssetGenImage('assets/test/spare_part_image.png');
+
+  /// File path: assets/test/suspension.png
+  AssetGenImage get suspension =>
+      const AssetGenImage('assets/test/suspension.png');
+
+  /// List of all assets
+  List<dynamic> get values => [
+        accessories,
+        backlightGif,
+        bmwImage,
+        carImage,
+        flashImage,
+        mercedesImage,
+        performance,
+        saleImage,
+        sparePartImage,
+        suspension
+      ];
 }
 
 class $AssetsSvgsBottomNavBarIconsGen {
   const $AssetsSvgsBottomNavBarIconsGen();
 
-  /// File path: assets/svgs/bottom_nav_bar_icons/Icon.svg
-  SvgGenImage get icon =>
-      const SvgGenImage('assets/svgs/bottom_nav_bar_icons/Icon.svg');
+  /// File path: assets/svgs/bottom_nav_bar_icons/categories_icon.svg
+  SvgGenImage get categoriesIcon =>
+      const SvgGenImage('assets/svgs/bottom_nav_bar_icons/categories_icon.svg');
 
-  /// File path: assets/svgs/bottom_nav_bar_icons/grid-01.svg
-  SvgGenImage get grid01 =>
-      const SvgGenImage('assets/svgs/bottom_nav_bar_icons/grid-01.svg');
+  /// File path: assets/svgs/bottom_nav_bar_icons/favourites_icon.svg
+  SvgGenImage get favouritesIcon =>
+      const SvgGenImage('assets/svgs/bottom_nav_bar_icons/favourites_icon.svg');
 
-  /// File path: assets/svgs/bottom_nav_bar_icons/star-02.svg
-  SvgGenImage get star02 =>
-      const SvgGenImage('assets/svgs/bottom_nav_bar_icons/star-02.svg');
+  /// File path: assets/svgs/bottom_nav_bar_icons/home_icon.svg
+  SvgGenImage get homeIcon =>
+      const SvgGenImage('assets/svgs/bottom_nav_bar_icons/home_icon.svg');
+
+  /// File path: assets/svgs/bottom_nav_bar_icons/profile_icon.svg
+  SvgGenImage get profileIcon =>
+      const SvgGenImage('assets/svgs/bottom_nav_bar_icons/profile_icon.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [icon, grid01, star02];
+  List<SvgGenImage> get values =>
+      [categoriesIcon, favouritesIcon, homeIcon, profileIcon];
+}
+
+class $AssetsSvgsHomepageGen {
+  const $AssetsSvgsHomepageGen();
+
+  /// File path: assets/svgs/homepage/drawer_background.png
+  AssetGenImage get drawerBackground =>
+      const AssetGenImage('assets/svgs/homepage/drawer_background.png');
+
+  /// File path: assets/svgs/homepage/drawer_icon.svg
+  SvgGenImage get drawerIcon =>
+      const SvgGenImage('assets/svgs/homepage/drawer_icon.svg');
+
+  /// File path: assets/svgs/homepage/filter_icon.svg
+  SvgGenImage get filterIcon =>
+      const SvgGenImage('assets/svgs/homepage/filter_icon.svg');
+
+  /// File path: assets/svgs/homepage/heart_icon.svg
+  SvgGenImage get heartIcon =>
+      const SvgGenImage('assets/svgs/homepage/heart_icon.svg');
+
+  /// File path: assets/svgs/homepage/home_page_header_background.svg
+  SvgGenImage get homePageHeaderBackground =>
+      const SvgGenImage('assets/svgs/homepage/home_page_header_background.svg');
+
+  /// File path: assets/svgs/homepage/home_page_logo.png
+  AssetGenImage get homePageLogo =>
+      const AssetGenImage('assets/svgs/homepage/home_page_logo.png');
+
+  /// File path: assets/svgs/homepage/search_bottom_sheet_background.svg
+  SvgGenImage get searchBottomSheetBackground => const SvgGenImage(
+      'assets/svgs/homepage/search_bottom_sheet_background.svg');
+
+  /// File path: assets/svgs/homepage/search_icon.svg
+  SvgGenImage get searchIcon =>
+      const SvgGenImage('assets/svgs/homepage/search_icon.svg');
+
+  /// File path: assets/svgs/homepage/share_icon.svg
+  SvgGenImage get shareIcon =>
+      const SvgGenImage('assets/svgs/homepage/share_icon.svg');
+
+  /// File path: assets/svgs/homepage/shopping_bag_icon.svg
+  SvgGenImage get shoppingBagIcon =>
+      const SvgGenImage('assets/svgs/homepage/shopping_bag_icon.svg');
+
+  /// File path: assets/svgs/homepage/subscribe_background.svg
+  SvgGenImage get subscribeBackground =>
+      const SvgGenImage('assets/svgs/homepage/subscribe_background.svg');
+
+  /// List of all assets
+  List<dynamic> get values => [
+        drawerBackground,
+        drawerIcon,
+        filterIcon,
+        heartIcon,
+        homePageHeaderBackground,
+        homePageLogo,
+        searchBottomSheetBackground,
+        searchIcon,
+        shareIcon,
+        shoppingBagIcon,
+        subscribeBackground
+      ];
+}
+
+class $AssetsSvgsProductDetailsGen {
+  const $AssetsSvgsProductDetailsGen();
+
+  /// File path: assets/svgs/product_details/cart_icon.svg
+  SvgGenImage get cartIcon =>
+      const SvgGenImage('assets/svgs/product_details/cart_icon.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [cartIcon];
 }
 
 class Assets {
@@ -78,7 +253,9 @@ class Assets {
   static const String aEnv = '.env';
   static const $AssetsAuthGen auth = $AssetsAuthGen();
   static const $AssetsI18nGen i18n = $AssetsI18nGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsSvgsGen svgs = $AssetsSvgsGen();
+  static const $AssetsTestGen test = $AssetsTestGen();
 
   /// List of all assets
   static List<String> get values => [aEnv];

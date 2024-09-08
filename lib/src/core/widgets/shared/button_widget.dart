@@ -26,7 +26,7 @@ class ButtonWidget extends StatelessWidget {
     this.textStyle,
     this.borderColor,
     this.topLeftRadius = 25,
-    this.topRightRadius = 0,
+    this.topRightRadius = 25,
     this.bottomLeftRadius = 25,
     this.bottomRightRadius = 25,
     this.height,
