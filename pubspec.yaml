@@ -19,6 +19,7 @@ dependencies:
   flutter_native_splash: ^2.4.1
   # responsive
   flutter_screenutil: ^5.9.3
+  device_preview:
   # localization
   easy_localization: ^3.0.7
   # assets manager

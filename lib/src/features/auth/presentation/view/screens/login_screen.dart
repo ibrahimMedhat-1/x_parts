@@ -9,20 +9,26 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
+        top: false,
+        bottom: false,
         child: SingleChildScrollView(
           child: Column(
             children: [
               Row(),
               SizedBox(width: 311.w, height: 297.h, child: Center(child: Assets.auth.loginLogo.image())),
               SizedBox(
-                height: 547.h,
                 width: 390.w,
                 child: Stack(
+                  alignment: Alignment.center,
                   children: [
-                    Assets.auth.loginBackgroundImage.svg(fit: BoxFit.fill, width: 393.w),
+                    SizedBox(
+                      width: double.infinity,
+                        height: MediaQuery.sizeOf(context).height-297.h,
+                        child: Assets.auth.loginBackgroundImage.svg(fit: BoxFit.fill)),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 40.w),
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           59.isHeight,

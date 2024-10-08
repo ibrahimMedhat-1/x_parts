@@ -1,6 +1,6 @@
 import 'package:x_parts/src/core/utils/app_imports.dart';
 
-class TextFormFieldCustomized extends StatelessWidget {
+class TextFormFieldCustomized extends StatefulWidget {
   final String? hintText;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
@@ -71,77 +71,100 @@ class TextFormFieldCustomized extends StatelessWidget {
   });
 
   @override
+  State<TextFormFieldCustomized> createState() => _TextFormFieldCustomizedState();
+}
+
+class _TextFormFieldCustomizedState extends State<TextFormFieldCustomized> {
+  bool isFocus = false;
+
+  @override
   Widget build(BuildContext context) {
     final OutlineInputBorder border = OutlineInputBorder(
       borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(topLeftRadius),
-        topRight: Radius.circular(topRightRadius),
-        bottomLeft: Radius.circular(bottomLeftRadius),
-        bottomRight: Radius.circular(bottomRightRadius),
+        topLeft: Radius.circular(widget.topLeftRadius),
+        topRight: Radius.circular(widget.topRightRadius),
+        bottomLeft: Radius.circular(widget.bottomLeftRadius),
+        bottomRight: Radius.circular(widget.bottomRightRadius),
       ),
-      borderSide: BorderSide(color: borderColor ?? Colors.transparent),
+      borderSide: BorderSide(color: widget.borderColor ?? Colors.transparent),
     );
     return InkWell(
-      onTap: onTap,
+      onTap: widget.onTap,
       child: SizedBox(
-        height: height,
-        width: width,
+        height: widget.height,
+        width: widget.width,
         child: TextFormField(
-          expands: height != null,
-          inputFormatters: inputFormatters,
+          expands: widget.height != null,
+          inputFormatters: widget.inputFormatters,
           style: TextStyle(
-            color: enabled ? textColor ?? Colors.white : Theme.of(context).textTheme.bodyLarge!.color,
+            color: widget.enabled
+                ? widget.textColor ?? Colors.white
+                : Theme.of(context).textTheme.bodyLarge!.color,
           ),
-          maxLength: maxCharacters,
-          keyboardType: keyboardType,
-          obscureText: obscureText,
-          enabled: enabled,
-          controller: controller,
-          onChanged: onChanged,
+          maxLength: widget.maxCharacters,
+          keyboardType: widget.keyboardType,
+          obscureText: widget.obscureText,
+          enabled: widget.enabled,
+          controller: widget.controller,
+          onChanged: widget.onChanged,
           cursorColor: Colors.black,
-          autofocus: autoFocus ?? true,
-          focusNode: focusNode,
-          minLines: minLines,
-          maxLines: maxLines ?? minLines ,
-          onFieldSubmitted: onFieldSubmitted,
-          onTapOutside: (event) => FocusScope.of(context).unfocus(),
+          // autofocus: widget.autoFocus ?? true,
+          focusNode: widget.focusNode,
+          minLines: widget.minLines,
+          maxLines: widget.maxLines ?? widget.minLines,
+          onFieldSubmitted: widget.onFieldSubmitted,
+          onTapOutside: (event) {
+            setState(() {
+            FocusScope.of(context).unfocus();
+              isFocus=false;
+            });
+          },
           validator: (value) {
             if (value != null && value.isNotEmpty) {
-              if (minLength != 0) {
-                if (value.length < minLength) {
-                  return 'Must be $minLength numbers';
+              if (widget.minLength != 0) {
+                if (value.length < widget.minLength) {
+                  return 'Must be ${widget.minLength} numbers';
                 } else {
                   return null;
                 }
               }
               return null;
             } else {
-              return validationMessage;
+              return widget.validationMessage;
             }
+          },
+          onTap: () {
+            setState(() {
+              isFocus=true;
+            });
           },
           decoration: InputDecoration(
             counterText: '',
             filled: true,
-            fillColor: fillColor ?? AppColors.mainDarkColor,
+            fillColor: widget.fillColor ?? AppColors.mainDarkColor,
             contentPadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
             border: border,
             enabledBorder: border,
             disabledBorder: border,
             focusedBorder: border,
-            hintText: hintText,
-            label: label != null
-                ? RichText(
-                    text: TextSpan(children: [
-                    TextSpan(text: '$label\n', style: TextStyles.font12WhiteRegular),
-                    if (labelDesc != null)
-                      TextSpan(text: '$labelDesc', style: TextStyles.font16GreyRegular),
-                  ]))
+            hintText: widget.hintText,
+            label: widget.label != null
+                ? Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('${widget.label}', style: TextStyles.font12WhiteRegular),
+                      if (widget.labelDesc != null && !isFocus)
+                        Text('${widget.labelDesc}', style: TextStyles.font16GreyRegular),
+                    ],
+                  )
                 : null,
-            hintStyle: TextStyle(color: hintColor ?? Colors.grey.shade400, fontSize: 12.sp),
-            prefixIcon: prefixIcon,
+            hintStyle: TextStyle(color: widget.hintColor ?? Colors.grey.shade400, fontSize: 12.sp),
+            prefixIcon: widget.prefixIcon,
             suffixIcon: IconButton(
-              onPressed: onSuffixPressed,
-              icon: suffixIcon ?? const SizedBox(),
+              onPressed: widget.onSuffixPressed,
+              icon: widget.suffixIcon ?? const SizedBox(),
             ),
           ),
         ),

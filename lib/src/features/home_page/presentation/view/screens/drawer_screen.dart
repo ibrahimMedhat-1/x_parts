@@ -6,7 +6,7 @@ class DrawerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarDefault(title: ''),
+      appBar: const AppBarDefault(title: ''),
       body: Stack(
         children: [
           Assets.svgs.homepage.drawerBackground.image(fit: BoxFit.fill, width: 390.w),
@@ -15,18 +15,27 @@ class DrawerScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Spacer(),
-              TextButton(onPressed: () {
-                getIt<LayoutCubit>().changeLayoutBody(0);
-                context.pop();
-              }, child: Text('Home', style: TextStyles.font40WhiteMedium)),
-              TextButton(onPressed: () {
-                getIt<LayoutCubit>().changeLayoutBody(3);
-                context.pop();
-              }, child: Text('Profile', style: TextStyles.font40WhiteMedium)),
-              TextButton(onPressed: () {
-                getIt<LayoutCubit>().changeLayoutBody(2);
-                context.pop();
-              }, child: Text('Wishlist', style: TextStyles.font40WhiteMedium)),
+              TextButton(
+                  onPressed: () {
+                    getIt<LayoutCubit>().changeLayoutBody(0);
+                    context.pop();
+                  },
+                  child: Text('Home', style: TextStyles.font40WhiteMedium)),
+              TextButton(
+                  onPressed: () {
+                    getIt<LayoutCubit>().changeLayoutBody(3);
+                    context.pop();
+                  },
+                  child: Text('Profile', style: TextStyles.font40WhiteMedium)),
+              TextButton(
+                  onPressed: () {
+                    getIt<LayoutCubit>().changeLayoutBody(2);
+                    context.pop();
+                  },
+                  child: Text('Wishlist', style: TextStyles.font40WhiteMedium)),
+              TextButton(
+                  onPressed: ()=>context.pushReplacementNamed(Routes.cartScreen),
+                  child: Text('Cart', style: TextStyles.font40WhiteMedium)),
               TextButton(
                   onPressed: () => context.pushNamedAndRemoveUntil(
                         Routes.loginScreen,

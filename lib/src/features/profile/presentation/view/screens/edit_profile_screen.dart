@@ -10,10 +10,14 @@ class EditProfileScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: SizedBox(
           height: MediaQuery.sizeOf(context).height -100.h,
-          width: 390.w,
+          width: double.infinity,
           child: Stack(
+            alignment: Alignment.bottomCenter,
             children: [
-              Assets.auth.signupBackground.svg(fit: BoxFit.fill, width: 393.w),
+              SizedBox(
+                  height: MediaQuery.sizeOf(context).height -100.h,
+                  width: double.infinity,
+                  child: Assets.auth.signupBackground.svg(fit: BoxFit.fill)),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 59.h),
                 child: Column(
@@ -25,7 +29,6 @@ class EditProfileScreen extends StatelessWidget {
                     ButtonWidget(onTap: () {}, text: 'Edit',topRightRadius: 0),
                     20.isHeight,
                     TextFormFieldCustomized(
-                      height: 78.h,
                       width: 289.w,
                       label: 'Full name',
                       enabled: true,
@@ -63,7 +66,7 @@ class EditProfileScreen extends StatelessWidget {
                           ),
                         ),
                         20.isWidth,
-        
+
                         Expanded(
                           child: ButtonWidget(
                             onTap: () {},
@@ -72,7 +75,7 @@ class EditProfileScreen extends StatelessWidget {
                             height: 57.h,
                           ),
                         ),
-        
+
                       ],
                     ),
                   ],

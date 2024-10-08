@@ -20,7 +20,7 @@ class CategoriesScreen extends StatelessWidget {
               bottomRight: Radius.circular(40.r),
               bottomLeft: Radius.circular(40.r),
             ),
-            boxShadow: [BoxShadow(color: Colors.white, blurRadius: 20)]),
+            boxShadow: const [BoxShadow(color: Colors.white, blurRadius: 20)]),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -51,6 +51,7 @@ class CategoriesScreen extends StatelessWidget {
             Expanded(
               child: GridView.count(
                 crossAxisCount: 2,
+                childAspectRatio: 1.w/1.5.h,
                 children: [
                   ProductWidget(largeView: true),
                   ProductWidget(largeView: true),

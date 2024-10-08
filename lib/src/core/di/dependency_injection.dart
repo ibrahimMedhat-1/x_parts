@@ -1,4 +1,3 @@
-import 'package:x_parts/src/core/layout/presentation/manager/layout_cubit.dart';
 import 'package:x_parts/src/core/utils/app_imports.dart';
 
 final getIt = GetIt.instance;

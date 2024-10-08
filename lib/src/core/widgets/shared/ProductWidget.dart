@@ -106,7 +106,8 @@ class ProductWidget extends StatelessWidget {
             Text(
               '12-20 Toyota 86 GT86 13-20 Subaru BRZ 13-20 Scion FR-S'
               ' Full LED',
-              style: TextStyles.font4WhiteRegular,
+              overflow: TextOverflow.ellipsis, 
+              style: TextStyles.font10GreyRegular.copyWith(color: Colors.white),
             ),
             10.isHeight,
 

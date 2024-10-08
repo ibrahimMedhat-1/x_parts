@@ -98,14 +98,48 @@ class FilterBody extends StatelessWidget {
         ),
         10.isHeight,
         Container(
+          width: double.infinity,
           decoration: BoxDecoration(
               color: AppColors.lightMainDarkColor,
               borderRadius: BorderRadius.only(topRight: Radius.circular(60.r))),
-          child: TextFormField(
-            decoration: const InputDecoration(
-                border: OutlineInputBorder(
-              borderSide: BorderSide.none,
-            )),
+          child: DropdownButton(
+            padding: EdgeInsets.symmetric(horizontal: 60.w),
+            underline: const SizedBox.shrink(),
+            isExpanded: true,
+            icon: const Icon(
+              Icons.keyboard_arrow_down_outlined,
+            ),
+            hint: Text(
+              'Model',
+              style: TextStyles.font24WhiteMedium.copyWith(
+                fontSize: 20.sp,
+              ),
+            ),
+            dropdownColor: Colors.black,
+            onChanged: (value) {},
+            items: [
+              DropdownMenuItem(
+                value: 'X6',
+                child: Text(
+                  'X6',
+                  style: TextStyles.font18WhiteMedium,
+                ),
+              ),
+              DropdownMenuItem(
+                value: 'X4',
+                child: Text(
+                  'X4',
+                  style: TextStyles.font18WhiteMedium,
+                ),
+              ),
+              DropdownMenuItem(
+                value: 'X5',
+                child: Text(
+                  'X5',
+                  style: TextStyles.font18WhiteMedium,
+                ),
+              ),
+            ],
           ),
         ),
         30.isHeight,
@@ -117,21 +151,56 @@ class FilterBody extends StatelessWidget {
         ),
         10.isHeight,
         Container(
+          width: double.infinity,
           decoration: BoxDecoration(
               color: AppColors.lightMainDarkColor,
-              borderRadius: BorderRadius.only(topRight: Radius.circular(60.r))),
-          child: TextFormField(
-            decoration: const InputDecoration(
-                border: OutlineInputBorder(
-              borderSide: BorderSide.none,
-            )),
+              borderRadius: BorderRadius.only(bottomRight: Radius.circular(60.r))),
+          child: DropdownButton(
+            padding: EdgeInsets.symmetric(horizontal: 60.w),
+            underline: const SizedBox.shrink(),
+            isExpanded: true,
+            icon: const Icon(
+              Icons.keyboard_arrow_down_outlined,
+            ),
+            hint: Text(
+              'Year',
+              style: TextStyles.font24WhiteMedium.copyWith(
+                fontSize: 20.sp,
+              ),
+            ),
+            dropdownColor: Colors.black,
+            onChanged: (value) {},
+            items: [
+              DropdownMenuItem(
+                value: '2021',
+                child: Text(
+                  '2021',
+                  style: TextStyles.font18WhiteMedium,
+                ),
+              ),
+              DropdownMenuItem(
+                value: '2022',
+                child: Text(
+                  '2022',
+                  style: TextStyles.font18WhiteMedium,
+                ),
+              ),
+              DropdownMenuItem(
+                value: '2023',
+                child: Text(
+                  '2023',
+                  style: TextStyles.font18WhiteMedium,
+                ),
+              ),
+            ],
           ),
         ),
         40.isHeight,
         InkWell(
           splashColor: Colors.transparent,
           highlightColor: Colors.transparent,
-          focusColor: Colors.transparent,hoverColor: Colors.transparent,
+          focusColor: Colors.transparent,
+          hoverColor: Colors.transparent,
           overlayColor: WidgetStatePropertyAll<Color>(Colors.transparent),
           radius: 0,
           onTap: onSearch,

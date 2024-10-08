@@ -90,6 +90,7 @@ class FavouritesScreen extends StatelessWidget {
               GridView.count(
                 crossAxisCount: 2,
                 shrinkWrap: true,
+                childAspectRatio: 1.w/1.5.h,
                 physics: const NeverScrollableScrollPhysics(),
                 children: [
                   ProductWidget(largeView: true),

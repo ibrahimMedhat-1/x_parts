@@ -20,10 +20,10 @@ class HomePageScreen extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: SizedBox(
-            width: 390.w,
+            width: double.infinity,
             child: Stack(
               children: [
-                Assets.svgs.homepage.homePageHeaderBackground.svg(fit: BoxFit.fill, width: 390.w),
+                Assets.svgs.homepage.homePageHeaderBackground.svg(fit: BoxFit.fill, width: 390.w,height: 600.h),
                 Column(
                   children: [
                     const HomeAppBarWidget(),
